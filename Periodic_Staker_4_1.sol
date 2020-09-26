@@ -13,9 +13,7 @@ contract ERC20{
 
 contract PeriodicStaker {
     
-
     event Staked(address staker);
-
 
     ERC20 public token;
     uint public total_stake=0;
@@ -28,12 +26,12 @@ contract PeriodicStaker {
     
     uint public startLock;
     uint public lockTime;
-    uint minLock=17280;
-    uint maxLock=172800;
+    uint minLock=10000;
+    uint maxLock=200000;
     
     uint public freezeTime;
-    uint minFreeze=17280;
-    uint maxFreeze=40320;
+    uint minFreeze=10000;
+    uint maxFreeze=200000;
 
     address public master;
     mapping(address => bool)public modules;
