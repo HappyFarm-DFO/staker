@@ -33,7 +33,6 @@ contract TreeStaker{
        require(list[_index].stake<_stake);
        require(token.transfer(address(this),_stake));
        uint prev=list[_index].prev;
-       uint next=_index;
        list.push(Leaf(prev,_index,_stake,msg.sender,_container));
        list[list[_index].prev].next=list.length-1;
        list[_index].prev=list.length-1;
